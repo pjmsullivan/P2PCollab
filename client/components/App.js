@@ -7,8 +7,8 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <p>Test text</p>
+      <div id="textCanvas">
+        <p>Test drop it like it's hot all the time text</p>
       </div>
     );
   }

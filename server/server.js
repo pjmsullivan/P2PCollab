@@ -9,8 +9,10 @@ const PEER_SERVER_PORT = 9000;
 const server = app.listen(PEER_SERVER_PORT, () => {
   console.log(`Peer server listening on port: ${PEER_SERVER_PORT}`);
 });
-const peerServer = ExpressPeerServer(server, {path: '/connect'});
-app.use('/peerjs', peerServer)
+const peerServer = ExpressPeerServer(server, {path: '/peer'});
+app.use('/connect', peerServer)
+
+// peerServer.on('connection', (client) => { ... });
 
 //http server and routing
 if (process.env.NODE_ENV === 'production') {

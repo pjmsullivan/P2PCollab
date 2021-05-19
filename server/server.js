@@ -9,8 +9,8 @@ const PEER_SERVER_PORT = 9000;
 const server = app.listen(PEER_SERVER_PORT, () => {
   console.log(`Peer server listening on port: ${PEER_SERVER_PORT}`);
 });
-const peerServer = ExpressPeerServer(server, {path: '/peer'});
-app.use('/connect', peerServer)
+const peerServer = ExpressPeerServer(server, {debug: true, path: '/peer'});
+app.use('/connect', peerServer);
 
 // peerServer.on('connection', (client) => { ... });
 
@@ -23,8 +23,8 @@ if (process.env.NODE_ENV === 'production') {
     return res.status(200).sendFile(path.join(__dirname, '../index.html'));
   });
 }
-
+//run express http server http://localhost:3000
 app.listen(PORT, () => {
   console.log(`HTTP server listening on port: ${PORT}`);
-}); //localhost:3000
+}); 
 

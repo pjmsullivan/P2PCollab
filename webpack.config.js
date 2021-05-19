@@ -30,6 +30,7 @@ module.exports = {
     publicPath: '/build',
     proxy: {
       '/api' : 'http://localhost:3000',
+      // '/connect' : 'http://localhost:9000'
     }
   }
 }

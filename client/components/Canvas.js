@@ -48,7 +48,6 @@ class Canvas extends Component {
 
   handleConnectToPeer(event) {
     console.log('Connecting to peer: ', event);
-    this.setState({ remoteId: event.target.value});
     
     this.connection = peer.connect(event.target.value);
     this.connection.on('open', () => {
@@ -128,7 +127,7 @@ class Canvas extends Component {
         <p>Connection status: {connectionStatus}</p>
         <fieldset>
           <legend>To connect with peer, enter their Peer ID</legend>
-          <input value={remoteId} onChange={this.handleConnectToPeer}/>
+          <input size='40' autoFocus={true} placeholder={remoteId} onChange={this.handleConnectToPeer}/>
         </fieldset>
         <fieldset>
           <legend>Shared Text Area</legend>

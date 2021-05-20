@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Canvas from './Canvas';
+import Canvas from './Canvas.jsx';
 
 class App extends Component {
   constructor(props) {

@@ -3,11 +3,11 @@ const path = require('path');
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    src: './client/index.js',
+    src: './client/index.jsx',
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -17,20 +17,20 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env', '@babel/preset-react'],
-        }
+        },
       },
       {
         test: /\.s[ac]ss$/i,
         exclude: /(node_modules)/,
-        use: [ "style-loader", "css-loader", "sass-loader" ],
-      }
-    ]
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   devServer: {
     publicPath: '/build',
     proxy: {
-      '/api' : 'http://localhost:3000',
+      '/api': 'http://localhost:3000',
       // '/connect' : 'http://localhost:9000'
-    }
-  }
-}
+    },
+  },
+};

@@ -1,30 +1,29 @@
 const express = require('express');
 const { ExpressPeerServer } = require('peer');
+
 const app = express();
 const path = require('path');
+
 const PORT = 3000;
 const PEER_SERVER_PORT = 9000;
 
-//peer server
+// peer server
 const server = app.listen(PEER_SERVER_PORT, () => {
   console.log(`Peer server listening on port: ${PEER_SERVER_PORT}`);
 });
-const peerServer = ExpressPeerServer(server, {debug: true, path: '/peer'});
+const peerServer = ExpressPeerServer(server, { debug: true, path: '/peer' });
 app.use('/connect', peerServer);
 
 // peerServer.on('connection', (client) => { ... });
 
-//http server and routing
+// http server and routing
 if (process.env.NODE_ENV === 'production') {
-  //when webpack builds bundle.js, statically serve it on the ./build route
+  // when webpack builds bundle.js, statically serve it on the ./build route
   app.use('/build', express.static(path.join(__dirname, '../build')));
   // serve index.html on root route
-  app.get('/', (req, res) => {
-    return res.status(200).sendFile(path.join(__dirname, '../index.html'));
-  });
+  app.get('/', (req, res) => res.status(200).sendFile(path.join(__dirname, '../index.html')));
 }
-//run express http server http://localhost:3000
+// run express http server http://localhost:3000
 app.listen(PORT, () => {
   console.log(`HTTP server listening on port: ${PORT}`);
-}); 
-
+});

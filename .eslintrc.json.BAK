@@ -1,0 +1,34 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "es2020": true,
+      "jest": true
+    },
+    "extends": ["airbnb", "prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+      "prettier/prettier": ["error"],
+      "quotes": [
+        "error",
+        "single",
+        { "avoidEscape": true, "allowTemplateLiterals": false }
+      ],
+      "default-case-last": "error",
+      "default-param-last": ["error"],
+      "no-useless-call": "error",
+      "prefer-exponentiation-operator": "error",
+      "prefer-regex-literals": "error",
+      "react/prefer-stateless-function": ["warn"],
+      "react/jsx-key": "warn",
+      "react/no-direct-mutation-state": "error",
+      "react/no-adjacent-inline-elements": "error"
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
+  }
+  

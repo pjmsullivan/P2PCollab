@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './components/App.jsx';
+import Canvas from './components/Canvas.jsx';
 import styles from './scss/application.scss';
 
-render(<App />, document.getElementById('root'));
+render(<Canvas />, document.getElementById('root'));

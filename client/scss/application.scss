@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Pattaya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
 body {
-  background: lightseagreen;
+  background: #ffffff;
 }
 
-#textCanvas {
-  background: lightskyblue;
-  border: magenta;
-  border-width: 1px;
-  border-style: solid;
+fieldset {
+  border-radius: 10px;
+  border-color: #009624;
+}
+
+textarea, input {
+  border-radius: 5px;
+  box-shadow: rgba($color: #009624, $alpha: 0.83) 1px 1px 3px;
+}
+
+h1 {
+  font-family: 'Pattaya', sans-serif;
+  font-weight: normal;
+  font-size: 4em;
+  color: #00c853;
+  text-shadow: rgba($color: #009624, $alpha: 0.83) 1px 1px 4px;
+  
+}
+
+p, legend, textarea, input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
 }
